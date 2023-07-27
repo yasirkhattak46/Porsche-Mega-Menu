@@ -21,7 +21,7 @@
         <div class="blur-active"></div>
 
     </div>
-    <i class="fas fa-bars menu_btn " onclick="toggleleft()"> <span class="menuText">Menu</span> </i>
+    <i class="fa-solid fa-bars menu_btn " onclick="toggleleft()"> <span class="menuText">Menu</span> </i>
     <div class="sidebar">
         <div id="sidebar1">
             <div class="row">
@@ -100,12 +100,17 @@
                         <div class=" tab-pane fade active show" id="home" role="tabpanel"
                              aria-labelledby="home-tab">
                             <div class="cars_tab d-grid justify-content-center">
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/718.webp"></a>
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/911.webp"></a>
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/taycan.webp"></a>
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/panamera.webp"></a>
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/macan.webp"></a>
-                                <a href="#" onclick="toggleSecondNav()"><img src="assets/images/cayenne.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('model_718-tab')"><img
+                                            src="assets/images/718.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('model_911-tab')"><img
+                                            src="assets/images/911.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('taycan-tab')"><img
+                                            src="assets/images/taycan.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('Panamera-tab')"><img
+                                            src="assets/images/panamera.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('Macan-tab')"><img src="assets/images/macan.webp"></a>
+                                <a href="#" onclick="toggleSecondNav('cayenne-tab')"><img
+                                            src="assets/images/cayenne.webp"></a>
                             </div>
                         </div>
                         <div class="tab-pane fade" id="Primary" role="tabpanel" aria-labelledby="Primary-tab">
@@ -195,10 +200,13 @@
         <div id="sidebar2">
             <div class="row">
                 <div class="col-lg-6 p-0 sidebar_tabs pt-5">
+                    <i class="fa-solid fa-angle-left model_back_btn" onclick="backtoModels()"> <span
+                                class="model_back_text">Models</span> </i>
                     <ul class="nav nav-tabs d-block border-0 pt-5" id="myTab" role="tablist">
                         <li onclick="mobile_four_nav()"
                             class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative" role="presentation">
-                            <button class=" nav-link active m-auto nav_btn" id="model_718-tab" data-bs-toggle="tab"
+                            <button class=" nav-link active m-auto nav_btn sec_menu" id="model_718-tab"
+                                    data-bs-toggle="tab"
                                     data-bs-target="#model_718" type="button" role="tab" aria-controls="model_718"
                                     aria-selected="true">
                                 <img src="assets/images/718.min.d92dc0fe91e67bd51120d91c5cd1eb2f.svg"
@@ -207,7 +215,7 @@
                         </li>
                         <li onclick="mobile_four_nav()" class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative"
                             role="presentation">
-                            <button class="nav-link m-auto nav_btn" id="model_911-tab" data-bs-toggle="tab"
+                            <button class="nav-link m-auto nav_btn sec_menu" id="model_911-tab" data-bs-toggle="tab"
                                     data-bs-target="#model_911" type="button" role="tab" aria-controls="model_911"
                                     aria-selected="false"
                                     tabindex="-1">
@@ -217,7 +225,7 @@
                         </li>
                         <li onclick="mobile_four_nav()" class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative"
                             role="presentation">
-                            <button class="nav-link m-auto nav_btn" id="taycan-tab" data-bs-toggle="tab"
+                            <button class="nav-link m-auto nav_btn sec_menu" id="taycan-tab" data-bs-toggle="tab"
                                     data-bs-target="#taycan"
                                     type="button" role="tab" aria-controls="taycan" aria-selected="false"
                                     tabindex="-1">
@@ -227,7 +235,7 @@
                         </li>
                         <li onclick="mobile_four_nav()" class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative"
                             role="presentation">
-                            <button class="nav-link m-auto nav_btn" id="Panamera-tab" data-bs-toggle="tab"
+                            <button class="nav-link m-auto nav_btn sec_menu" id="Panamera-tab" data-bs-toggle="tab"
                                     data-bs-target="#Panamera" type="button" role="tab" aria-controls="Panamera"
                                     aria-selected="false" tabindex="-1">
                                 <img src="assets/images/panamera.min.d35913b252657f7c5cfcae74cfd61b26.svg"
@@ -236,7 +244,7 @@
                         </li>
                         <li onclick="mobile_four_nav()" class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative"
                             role="presentation">
-                            <button class="nav-link m-auto nav_btn" id="Macan-tab" data-bs-toggle="tab"
+                            <button class="nav-link m-auto nav_btn sec_menu" id="Macan-tab" data-bs-toggle="tab"
                                     data-bs-target="#Macan" type="button" role="tab" aria-controls="Macan"
                                     aria-selected="false"
                                     tabindex="-1">
@@ -246,7 +254,7 @@
                         </li>
                         <li onclick="mobile_four_nav()" class="nav-item  pb-xl-4 pb-md-4 pb-3 px-5 position-relative"
                             role="presentation">
-                            <button class="nav-link m-auto nav_btn" id="cayenne-tab" data-bs-toggle="tab"
+                            <button class="nav-link m-auto nav_btn sec_menu" id="cayenne-tab" data-bs-toggle="tab"
                                     data-bs-target="#cayenne"
                                     type="button" role="tab" aria-controls="cayenne" aria-selected="false"
                                     tabindex="-1">
@@ -485,19 +493,16 @@
         $(".blur-active").fadeIn("slow");
     }
 
-    function toggleSecondNav() {
-        $("#sidebar2").fadeIn("slow");
+    function backtoModels() {
+        $("#sidebar2").fadeOut("slow");
     }
 
-    function closeNav() {
-        $(".sidebar").animate({
-            width: "toggle"
-        });
-        $("#sidebar2").fadeOut("slow");
-        $(".blur-active").fadeOut("slow");
-    }
 
     if ($(window).width() < 767) {
+        function toggleSecondNav(tab_id) {
+            $("#sidebar2").fadeIn("slow");
+        }
+
         function mobile_sec_nav() {
             $(".mobile_sec_nav").animate({
                 width: "toggle"
@@ -509,8 +514,36 @@
                 width: "toggle"
             });
         }
+
+        function closeNav() {
+            $(".sidebar").animate({
+                width: "toggle"
+            });
+            $("#sidebar2").fadeOut("slow");
+            $(".blur-active").fadeOut("slow");
+            $(".mobile_sec_nav ").fadeOut();
+        }
+
+    } else {
+        function closeNav() {
+            $(".sidebar").animate({
+                width: "toggle"
+            });
+            $("#sidebar2").fadeOut("slow");
+            $(".blur-active").fadeOut("slow");
+        }
+
+        function toggleSecondNav(tab_id) {
+            $("#sidebar2").fadeIn("slow");
+            $('#' + tab_id).trigger('click');
+        }
     }
 
+    // Extras
+    function mobile_sec_nav() {
+    }
 
+    function mobile_four_nav() {
+    }
 </script>
 </html>
