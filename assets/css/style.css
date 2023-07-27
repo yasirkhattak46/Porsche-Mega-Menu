@@ -1,0 +1,237 @@
+* {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none !important;
+    box-sizing: border-box;
+    font-family: "Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.blur-active {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Adjust the opacity (last value) to control the blur intensity */
+    backdrop-filter: blur(10px); /* Adjust the blur radius as needed */
+    pointer-events: none; /* Ensure the overlay doesn't capture clicks */
+}
+
+
+.menu_btn {
+    position: absolute;
+    left: 70px;
+    top: 30px;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+.menu_btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    border-radius: 8px;
+}
+
+.menuText {
+    font-size: 25px;
+    font-weight: 500;
+}
+
+.close_btn {
+    top: 20px;
+    font-size: 25px;
+    color: gray;
+    cursor: pointer;
+    position: absolute;
+    left: 104%;
+    border: 1px solid white;
+    padding: 10px 15px;
+    border-radius: 3px;
+}
+
+
+.close_btn:hover {
+    background-color: rgba(148, 149, 152, 0.18);
+    border-color: rgb(136, 137, 140);
+}
+
+
+.sidebar {
+    position: absolute;
+    z-index: 1;
+    display: none;
+    top: 0px;
+}
+
+#sidebar2 {
+    position: absolute;
+    top: 0;
+    display: none;
+    width: 100%;
+}
+
+.sidebar .row {
+    width: 104%;
+}
+
+.sidebar_tabs {
+    background-color: white;
+    height: 100vh;
+}
+
+.tab-content {
+    background-color: #EEEFF2;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.nav_btn {
+    font-size: 1.375rem;
+    color: rgb(1, 2, 5);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.nav_btn:hover, .nav_btn:focus, .nav_btn.active {
+    color: rgb(1, 2, 5) !important;
+    background-color: #EEEFF2 !important;
+}
+
+.tab_data a {
+    font-size: 1.25rem;
+    color: rgb(1, 2, 5);
+    line-height: 50px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.tab_data a:hover, .cars_tab a:hover {
+    background-color: rgba(148, 149, 152, 0.18);
+
+}
+
+.cars_tab, .tab_data, .btn_login, .dealer_tab {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: slideLeft 1s;
+}
+
+@keyframes slideLeft {
+    0% {
+        left: 50%;
+    }
+    50% {
+        left: 0;
+    }
+}
+
+.dealer_tab input {
+    box-sizing: border-box !important;
+    border: 2px solid rgb(107, 109, 112) !important;
+    border-radius: 4px !important;
+    background: transparent !important;
+    height: calc(6px + 2.125ex + 10px + 4px + 16px) !important;
+}
+
+.dealer_tab input:focus {
+    box-shadow: none;
+    border-color: rgb(1, 2, 5) !important;
+
+}
+
+.dealer_tab {
+    position: relative;
+}
+
+.location_icon {
+    padding: 3px 8px 0px 0px;
+    align-self: center;
+}
+
+.btn_location {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    border: 2px solid rgb(1, 2, 5);
+    border-radius: 4px;
+    padding: 13px 26px 13px 18px;
+    margin: auto;
+}
+
+.btn_login button {
+    border: 2px solid rgb(1, 2, 5);
+    border-radius: 4px;
+    font: 400 1rem / calc(6px + 2.125ex) "Porsche Next", "Arial Narrow", Arial, "Heiti SC", SimHei, sans-serif;
+    padding: 13px 26px;
+
+}
+
+.btn_login {
+    padding-bottom: 1.5rem;
+    border-bottom: 2px solid #d8d8db;
+    margin-bottom: 0.625rem;
+}
+
+.btn_login a {
+    color: rgb(1, 2, 5);
+    text-decoration: underline !important;
+}
+
+
+.nav_btn .models {
+    height: 1.625rem;
+}
+
+.cars_tab p {
+    text-align: center;
+    color: grey;
+}
+
+@media only screen and (max-width: 768px) {
+    .mobile_sec_nav {
+        position: absolute;
+        padding: 0px;
+        top: 0;
+        display: none;
+    }
+
+    .mobile_four_nav {
+        position: absolute;
+        padding: 0px;
+        top: 0;
+        display: none;
+    }
+
+    .close_btn {
+        left: 84%;
+    }
+
+    .sidebar {
+        width: 100%
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .sidebar {
+        width: 55%
+    }
+}
