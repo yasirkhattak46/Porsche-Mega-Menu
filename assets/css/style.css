@@ -226,25 +226,49 @@
 }
 
 @media only screen and (max-width: 768px) {
+    .close_btn{
+        border: unset;
+    }
+    .model_return{
+        position: relative;
+        top: 40px;
+        z-index: 10;
+        right: 330px;
+    }
+    .main_return{
+        position: absolute;
+        top: 40px;
+        z-index: 10;
+        left: 45px;
+    }
+    .model_menu{
+        display: none !important;
+    }
     .sidebar_tabs {
         padding-top: 40px;
     }
 
     .mobile_sec_nav {
+        width: inherit;
         position: absolute;
         padding: 0px;
         top: 0;
         display: none;
+    }
+    .mobile_sec_nav div{
+        width: inherit;
     }
 
     .mobile_four_nav {
+        width: inherit;
         position: absolute;
         padding: 0px;
         top: 0;
-        display: none;
+        z-index: 10;
     }
 
     .close_btn {
+        z-index: 11;
         left: 84%;
     }
 
@@ -254,6 +278,9 @@
 }
 
 @media only screen and (min-width: 768px) {
+    .model_return{
+        display: none;
+    }
     .sidebar {
         width: 55%
     }

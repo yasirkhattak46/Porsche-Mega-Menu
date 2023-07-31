@@ -194,12 +194,14 @@
                             </div>
                         </div>
                     </div>
+                    <i class="fa-solid fa-angle-left main_return" onclick="returnToMain()"></i>
+
                 </div>
             </div>
         </div>
         <div id="sidebar2">
             <div class="row">
-                <div class="col-lg-6 p-0 sidebar_tabs pt-5">
+                <div class="col-lg-6 p-0 sidebar_tabs pt-5 model_menu">
                     <i class="fa-solid fa-angle-left model_back_btn" onclick="backtoModels()"> <span
                                 class="model_back_text">Models</span> </i>
                     <ul class="nav nav-tabs d-block border-0 pt-5" id="myTab" role="tablist">
@@ -473,59 +475,62 @@
                         </div>
                     </div>
                 </div>
+                <i class="fa-solid fa-angle-left model_return" onclick="returntomodels()"></i>
             </div>
         </div>
         <i class="fas fa-close close_btn" onclick="closeNav()"></i>
     </div>
 
 </section>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+<script src="./assets/js/5.2.3_dist_js_bootstrap.bundle.min.js"
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="./assets/js/jquery_3.6.4_jquery.min.js"></script>
 
 </body>
-<script>
-    function toggleleft() {
+<?php
+$userAgent = $_SERVER['HTTP_USER_AGENT'];
+if (strpos($userAgent, 'Android') !== false || strpos($userAgent, 'iPhone') !== false) {
+?>
+<script>  function mobile_sec_nav() {
+        $(".mobile_sec_nav").animate({
+            width: "toggle"
+        });
+    }
+
+    function toggleSecondNav(tab_id) {
+        $('#' + tab_id).trigger('click');
+        $('#sidebar2').css('direction', 'rtl').animate({
+            width: "toggle"
+        });
+    }
+
+    function mobile_four_nav() {
+        $('.mobile_four_nav').animate({
+            width: "toggle"
+        });
+    }
+
+    function closeNav() {
         $(".sidebar").animate({
             width: "toggle"
         });
-        $(".blur-active").fadeIn("slow");
-    }
-
-    function backtoModels() {
         $("#sidebar2").fadeOut("slow");
+        $(".blur-active").fadeOut("slow");
+        $(".mobile_sec_nav ").fadeOut();
     }
 
+    function returntomodels (){
+        $('#sidebar2').fadeOut("slow");
+    }
 
-    if ($(window).width() < 767) {
-        function toggleSecondNav(tab_id) {
-            $("#sidebar2").fadeIn("slow");
-        }
-
-        function mobile_sec_nav() {
-            $(".mobile_sec_nav").animate({
-                width: "toggle"
-            });
-        }
-
-        function mobile_four_nav() {
-            $('.mobile_four_nav').animate({
-                width: "toggle"
-            });
-        }
-
-        function closeNav() {
-            $(".sidebar").animate({
-                width: "toggle"
-            });
-            $("#sidebar2").fadeOut("slow");
-            $(".blur-active").fadeOut("slow");
-            $(".mobile_sec_nav ").fadeOut();
-        }
-
-    } else {
-        function closeNav() {
+    function returnToMain(){
+        $('.mobile_sec_nav').fadeOut("slow");
+    }
+</script>
+<?php }else{ ?>
+<script>
+    function closeNav() {
             $(".sidebar").animate({
                 width: "toggle"
             });
@@ -537,13 +542,24 @@
             $("#sidebar2").fadeIn("slow");
             $('#' + tab_id).trigger('click');
         }
+
+        // Extras
+    function mobile_sec_nav(){}
+    function mobile_four_nav() {}
+
+</script>
+
+        <?php }?>
+<script>
+    function toggleleft() {
+        $(".sidebar").animate({
+            width: "toggle"
+        });
+        $(".blur-active").fadeIn("slow");
     }
 
-    // Extras
-    function mobile_sec_nav() {
-    }
-
-    function mobile_four_nav() {
+    function backtoModels() {
+        $("#sidebar2").fadeOut("slow");
     }
 </script>
 </html>
